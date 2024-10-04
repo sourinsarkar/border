@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/components.ts',
-      name: 'YourLibraryName',
-      fileName: (format) => `your-library-name.${format}.js`,
+      name: '@rin/border',
+      fileName: (format) => `border.${format}.js`,
       formats: ['es', 'umd'],
     },
     rollupOptions: {

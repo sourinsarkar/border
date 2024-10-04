@@ -10,7 +10,7 @@ interface DashedLineProps {
     dashGap?: number
 }
 
-export const DashedLine = ({ className, orientation = "horizontal", length, strokeColor = "#CED4DA", strokeWidth = 1, dashLength = 8, dashGap = 4 }: DashedLineProps) => {
+export const DashedLine = ({ className, orientation = "horizontal", length, strokeColor = "#CED4DA", strokeWidth = 1, dashLength = 8, dashGap = 4 }: DashedLineProps): JSX.Element => {
     const contentRef = useRef<HTMLDivElement>(null);
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 

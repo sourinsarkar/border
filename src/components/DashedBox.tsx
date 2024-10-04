@@ -10,7 +10,7 @@ interface DashedBoxProps {
     radius?: number
 }
 
-export const DashedBox = ({ children, className, strokeColor = "#CED4DA", strokeWidth = 1, dashLength = 8, dashGap = 4, radius = 8 }: DashedBoxProps) => {
+export const DashedBox = ({ children, className, strokeColor = "#CED4DA", strokeWidth = 1, dashLength = 8, dashGap = 4, radius = 8 }: DashedBoxProps): JSX.Element => {
     const contentRef = useRef<HTMLDivElement>(null);
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 

@@ -1,0 +1,12 @@
+# Ignore development files
+node_modules/
+src/
+vite.config.ts
+tsconfig.json
+pnpm-lock.yaml
+*.test.tsx
+*.test.js
+*.spec.tsx
+*.spec.js
+# Ignore build config files if not needed
+*.log
