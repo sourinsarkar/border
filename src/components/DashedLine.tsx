@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react"
+
 interface DashedLineProps {
     className?: string;
     orientation: "horizontal" | "vertical";

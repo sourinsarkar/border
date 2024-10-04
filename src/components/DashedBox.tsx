@@ -3,9 +3,14 @@ import { useEffect, useRef, useState, ReactNode } from "react"
 interface DashedBoxProps {
     children: ReactNode;
     className?: string;
+    strokeColor?: string
+    strokeWidth?: number
+    dashLength?: number
+    dashGap?: number
+    radius?: number
 }
 
-export const DashedBox = ({ children, className }: DashedBoxProps) => {
+export const DashedBox = ({ children, className, strokeColor = "#CED4DA", strokeWidth = 1, dashLength = 8, dashGap = 4, radius = 8 }: DashedBoxProps) => {
     const contentRef = useRef<HTMLDivElement>(null);
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
@@ -49,10 +54,10 @@ export const DashedBox = ({ children, className }: DashedBoxProps) => {
                     width={dimensions.width - 2}
                     height={dimensions.height - 2}
                     fill="none"
-                    stroke="#CED4DA"
-                    strokeWidth="1"
-                    strokeDasharray="8 4"
-                    rx="24" ry="24"
+                    stroke={strokeColor}
+                    strokeWidth={strokeWidth}
+                    strokeDasharray={`${dashLength} ${dashGap}`}
+                    rx={radius} ry={radius}
                 />    
             </svg>
             <div className={`relative z-10 ${className}`}>
