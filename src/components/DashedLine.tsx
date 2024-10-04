@@ -4,9 +4,13 @@ interface DashedLineProps {
     className?: string;
     orientation: "horizontal" | "vertical";
     length?: number;
+    strokeColor?: string
+    strokeWidth?: number
+    dashLength?: number
+    dashGap?: number
 }
 
-export const DashedLine = ({ className, orientation = "horizontal", length }: DashedLineProps) => {
+export const DashedLine = ({ className, orientation = "horizontal", length, strokeColor = "#CED4DA", strokeWidth = 1, dashLength = 8, dashGap = 4 }: DashedLineProps) => {
     const contentRef = useRef<HTMLDivElement>(null);
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
@@ -51,9 +55,9 @@ export const DashedLine = ({ className, orientation = "horizontal", length }: Da
                     y1 = { orientation == "horizontal" ? 1 : 0 }
                     x2 = { orientation == "horizontal" ? lineLength : 1 }
                     y2 = { orientation == "horizontal" ? 1 : lineLength }
-                    stroke="#CED4DA"
-                    strokeWidth="1"
-                    strokeDasharray="8 4"
+                    stroke={strokeColor}
+                    strokeWidth={strokeWidth}
+                    strokeDasharray={`${dashLength} ${dashGap}`}
                 />
             </svg>
         </div>
